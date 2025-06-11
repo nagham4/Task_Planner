@@ -14,3 +14,15 @@ let cancelOpreationButton = document.getElementById("cancelOpreationButton");
 let mainInput = document.getElementById("mainInput");
 let addNewTaskButton = document.getElementById("inputButton");
 let inputNote = document.getElementById("inputNote");
+
+//Blue button Click 
+let allButton = document.getElementById("all");
+let doneButton = document.getElementById("done");
+let todoButton = document.getElementById("todo");
+
+
+// Scroll container
+let scrollContainerDiv = document.getElementById("scrollContainer");
+
+// No tasks edge case header
+let noTasksHeader = document.getElementById("noTasksHeader");
