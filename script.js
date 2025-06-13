@@ -46,3 +46,22 @@ const noTasksChecker = ()=>{
     }
 
 }
+
+onst removeTasksHTML = ()=>{
+    let tasks = document.getElementsByClassName("task");
+    Array.from(tasks).forEach(task =>{
+        task.remove();
+    })
+
+
+}
+
+const removeTasksDoneHTML = ()=>{
+    let tasks = document.getElementsByClassName("task");
+    Array.from(tasks).forEach(task =>{
+        if(task.id[1] == 't')
+            task.remove();
+    })
+
+
+}
