@@ -45,3 +45,15 @@ body
         text-align: center;
     }
 }
+
+.inputContainer
+{
+    
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2vw 2vw;
+    border: 2px solid lightgray;
+    border-radius: 2vw;
+
+}
