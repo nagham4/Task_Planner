@@ -3,17 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Task Planner</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
-<!--
-<i class="fa-solid fa-trash" style="color: #890101;"></i>
-<i class="fa-solid fa-book" style="color: #74C0FC;"></i>
-<i class="fa-solid fa-pen" style="color: #FFD43B;"></i>
--->
 </head>
 <body>
     <section class="container">
+        <!--to do input-->
         <h1>To Do Input</h1>
         <div class="inputContainer">
             <div class="inputContainerContent">
@@ -25,7 +20,47 @@
                 <button id="inputButton">Add New Task</button>
             </div>
         </div>
+        <!--to do list -->
+        <h1>To Do List</h1>
+        <div class="listContainer">
+            <div class="tabsContainer">
+                <button class="tabButton" id="all">All</button>
+                <button class="tabButton" id="done">Done</button>
+                <button class="tabButton" id="todo">To Do</button>
+            </div>
+
+            <div class="scrollContainer" id="scrollContainer">
+                <h3 id="noTasksHeader">NO TASKS!</h3>
+            </div>
+
+            <div class="deleteContainer">
+                <button class="deleteButton" id="deleteDone">Delete Done Tasks</button>
+                <button class="deleteButton"id="deleteAll">Delete All Tasks</button>
+            </div>
+        </div>
     </section>
+
+    <div class="alert" id="confirmOpreation">
+        <div class="alertContent">
+            <h1>Please confirm if you would like to proceed with the operation<Br><Br>This action cannot be undone <i class="fa-solid fa-circle-xmark" style="color: #890101;"></i></h1>
+            <div>
+                <button id="confirmOpreationButton">Confirm</button>
+                <button id="cancelOpreationButton" >Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="alertEdit" id="confirmEdit">
+        <div class="alertEditContent">
+            <h1>Rename Task</h1>
+            <input id="alertEditContentInput" type="text" placeholder="New content">
+            <p id="inputEditNote">Please enter at least 6 characters, starting with a letter <span>!</span></p>
+            <div>
+                <button class="alertEditConfirmButton" id="confirmOpreationButtonEdit">Confirm</button>
+                <button id="cancelOpreationButtonEdit" >Cancel</button>
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>
