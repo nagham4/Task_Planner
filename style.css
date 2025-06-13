@@ -5,6 +5,19 @@
 <i class="fa-solid fa-circle-xmark" style="color: #890101;"></i>
 <i class="fa-solid fa-exclamation" style="color: #890101;></i>
 */
+
+:root {
+    --main-Blue:#0a96ba;
+}
+:root {
+    --main-gray:gray;
+}
+:root {
+    --main-lightgray:lightgray;
+}
+:root {
+    --main-white:white;
+}
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 *
 {
@@ -15,7 +28,7 @@ body
 {
     height: auto;
     width: auto;
-    font-family: "Montserrat";
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }  
 ::-webkit-scrollbar
 {
@@ -23,11 +36,11 @@ body
 }
 ::-webkit-scrollbar-track
 {
-    box-shadow: inset 0px 0px 15px gray; 
+    box-shadow: inset 0px 0px 15px var(--main-gray); 
 }
 ::-webkit-scrollbar-thumb
 {
-    background: #0a96ba;
+    background: var(--main-Blue);
 }
 
 .container
@@ -44,4 +57,71 @@ body
     {
         text-align: center;
     }
+}
+
+.inputContainer
+{
+    
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2vw 2vw;
+    border: 2px solid var(--main-lightgray);
+    border-radius: 2vw;
+
+}
+
+.inputContainerContent
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    div
+    {
+        width: 100%;
+        display: flex;
+    }
+
+    i
+    {
+        color: var(--main-white);
+        display: inline;
+        width: 1.2vw;
+        border-radius: 0.5vw;
+        padding: 0.8vw;
+        background-color: var(--main-Blue);
+    }
+    
+
+    input
+    {
+        width: 100%;
+        font-size: 1vw;
+        border: 1px solid var(--main-Blue);
+        border-radius: 0.5vw;
+        outline: none;
+        padding: 0.5vw 0 0.5vw 1vw;
+        background-color: var(--main-white);
+    }
+
+    p
+    {
+        display: none;
+        color: red;
+    }
+
+    button
+    {
+        width: 100%;
+        padding: 0.8vw 0 0.8vw 0;
+        color: var(--main-white);
+        background-color: var(--main-Blue);
+        border: none;
+        border-radius: 0.5vw;
+    }
+
+
 }
