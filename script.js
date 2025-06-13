@@ -26,3 +26,23 @@ let scrollContainerDiv = document.getElementById("scrollContainer");
 
 // No tasks edge case header
 let noTasksHeader = document.getElementById("noTasksHeader");
+
+//Task HTML COLLECTION like an array
+let taskArr = document.getElementsByClassName("task");
+
+
+//Red button Click 
+let deleteDoneButton = document.getElementById("deleteDone")
+let deleteAllButton = document.getElementById("deleteAll")
+
+const noTasksChecker = ()=>{
+    console.log("Inside noTasksChecker");
+    let taskCount = document.getElementsByClassName("task");
+    if(taskCount.length <= 0){
+        noTasksHeader.style.display = "block";
+    }
+    else{
+        noTasksHeader.style.display = "";
+    }
+
+}
