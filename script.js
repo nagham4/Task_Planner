@@ -115,3 +115,13 @@ const unloadTask = () => {
   const unloadedTasks = tasks ? JSON.parse(tasks) : [];
   return unloadedTasks;
 };
+
+const checkInpt = (textTT) => {
+  const check = /^(?!\d)/;
+
+  if (textTT.length > 5 && check.test(textTT)) {
+    return true;
+  } else {
+    return false;
+  }
+};
