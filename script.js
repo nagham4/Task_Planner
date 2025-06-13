@@ -96,3 +96,22 @@ const storeLocal = (task) => {
   // Save the updated task array back to localStorage
   localStorage.setItem("tasks", JSON.stringify(localTasks));
 };
+
+const saveTask = (text) => {
+  mainInput.value = "";
+  let task = {
+    taskId: Math.floor(Math.random() * 5) + "f",
+    paragraphStatus: "",
+    paragraphContent: text,
+  };
+
+  displayTaskOnAddNew(task);
+  noTasksChecker();
+  storeLocal(task);
+};
+
+const unloadTask = () => {
+  const tasks = localStorage.getItem("tasks");
+  const unloadedTasks = tasks ? JSON.parse(tasks) : [];
+  return unloadedTasks;
+};
