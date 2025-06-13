@@ -5,3 +5,27 @@
 <i class="fa-solid fa-circle-xmark" style="color: #890101;"></i>
 <i class="fa-solid fa-exclamation" style="color: #890101;></i>
 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*
+{
+    padding: 0px;
+    margin: 0px; 
+}
+body
+{
+    height: auto;
+    width: auto;
+    font-family: "Montserrat";
+}  
+::-webkit-scrollbar
+{
+    width: 10px;
+}
+::-webkit-scrollbar-track
+{
+    box-shadow: inset 0px 0px 15px gray; 
+}
+::-webkit-scrollbar-thumb
+{
+    background: #0a96ba;
+}
