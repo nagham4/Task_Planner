@@ -185,3 +185,46 @@ const confirmOpreation = () => {
         */
   });
 };
+
+const addNewTask = (text) => {
+  saveTask(text);
+};
+
+//               NOT FINISHED
+const displayTaskOnAddNew = (task) => {
+  let newTask = document.createElement("div");
+
+  newTask.classList = "task";
+  newTask.id = task.taskId;
+
+  //Creating the paragraph to containt the text content
+  let tempParagraph = document.createElement("p");
+  tempParagraph.textContent = task.paragraphContent;
+
+  //Creating Icondiv and content for the icon div
+  let iconDiv = document.createElement("div");
+  iconDiv.classList = "icons";
+
+  let tempCheckbox = document.createElement("input");
+  tempCheckbox.type = "checkbox";
+
+  let tempImg1 = document.createElement("img");
+  tempImg1.src = "./sourceImages/icons/pencil-solid.svg";
+  tempImg1.alt = "pencilIcon";
+
+  let tempImg2 = document.createElement("img");
+  tempImg2.src = "./sourceImages/icons/trash-solid.svg";
+  tempImg2.alt = "deleteIcon";
+
+  //Appending content to the icondiv
+  iconDiv.append(tempCheckbox);
+  iconDiv.append(tempImg1);
+  iconDiv.append(tempImg2);
+
+  //Appending content to the task div
+  newTask.append(tempParagraph);
+  newTask.append(iconDiv);
+
+  //Appending task to task scroll container
+  scrollContainerDiv.append(newTask);
+};
