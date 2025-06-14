@@ -228,3 +228,54 @@ const displayTaskOnAddNew = (task) => {
   //Appending task to task scroll container
   scrollContainerDiv.append(newTask);
 };
+
+const displayTasks = () => {
+  //creating the new div
+  const unloadedTasks = unloadTask();
+
+  if (unloadedTasks.length > 0) {
+    unloadedTasks.forEach((task) => {
+      let newTask = document.createElement("div");
+
+      newTask.classList = "task";
+      newTask.id = task.taskId;
+
+      //Creating the paragraph to containt the text content
+      let tempParagraph = document.createElement("p");
+      tempParagraph.textContent = task.paragraphContent;
+      if (task.taskId[1] === "t")
+        tempParagraph.classList = "taskParagraphCrossed";
+
+      //Creating Icondiv and content for the icon div
+      let iconDiv = document.createElement("div");
+      iconDiv.classList = "icons";
+
+      let tempCheckbox = document.createElement("input");
+      tempCheckbox.type = "checkbox";
+      if (task.taskId[1] === "t") tempCheckbox.checked = true;
+
+      let tempImg1 = document.createElement("img");
+      tempImg1.src = "pencil-svgrepo-com.svg";
+      tempImg1.alt = "pencilIcon";
+
+      let tempImg2 = document.createElement("img");
+      tempImg2.src = "trash-solid-svgrepo-com.svg";
+      tempImg2.alt = "deleteIcon";
+
+      //Appending content to the icondiv
+      iconDiv.append(tempCheckbox);
+      iconDiv.append(tempImg1);
+      iconDiv.append(tempImg2);
+
+      //Appending content to the task div
+      newTask.append(tempParagraph);
+      newTask.append(iconDiv);
+
+      //Appending task to task scroll container
+      scrollContainerDiv.append(newTask);
+    });
+  }
+  console.log("This is inside display tasks and these are the tasks :");
+  console.log(unloadedTasks);
+  //To make sure the no task note isnt shown
+};
