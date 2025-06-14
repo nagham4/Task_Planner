@@ -317,3 +317,43 @@ doneButton.onclick = () => {
     }
   }
 };
+todoButton.onclick = () => {
+  /* Style*/
+  todoButton.classList.add("hoverEffect");
+  allButton.classList.remove("hoverEffect");
+  doneButton.classList.remove("hoverEffect");
+
+  if (taskArr.length >= 1) {
+    for (let task of taskArr) {
+      if (task.id[1] === "f") task.style.display = "";
+      else task.style.display = "none";
+    }
+  }
+};
+
+/*
+    I used here Async to wait for the user to input from the buttons
+    as the compiler wont wait for input, either you use timeout callback (Which is hell)
+    or you use promise which is the sane easier choice 
+
+    NOTE:
+    You should declare the function that will deal with promises as ASYNC function
+*/
+deleteDoneButton.onclick = async () => {
+  const unloadedTasks = unloadTask();
+
+  if (unloadedTasks.length >= 1) {
+    let flag = await confirmOpreation();
+
+    if (flag) {
+      unloadedTasks.forEach((task, index) => {
+        if (task.taskId[1] === "t") {
+          storeTaskChange(task, index, 1);
+        }
+
+        removeTasksDoneHTML();
+        noTasksChecker();
+      });
+    }
+  }
+};
