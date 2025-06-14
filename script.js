@@ -279,3 +279,16 @@ const displayTasks = () => {
   console.log(unloadedTasks);
   //To make sure the no task note isnt shown
 };
+addNewTaskButton.onclick = () => {
+  let text = mainInput.value;
+
+  if (checkInpt(text)) {
+    addNewTask(text);
+    inputNote.style.display = "";
+  } else {
+    inputNote.style.display = "block";
+    setTimeout(() => {
+      inputNote.style.display = "";
+    }, 10000);
+  }
+};
