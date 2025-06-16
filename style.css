@@ -246,6 +246,17 @@ body
      #cancelOpreationButton
     {
         background-color: var(--main-red);
-    }*
+    }
+
+}
+
+.alertEditContent
+{
+    input
+    {
+        padding: 0.8vw 6vw 0.8vw 1vw; 
+        border: 1px solid black;
+        outline: none; 
+    }
 
 }
