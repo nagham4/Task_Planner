@@ -259,4 +259,11 @@ body
         outline: none; 
     }
 
+    div
+    {
+        display: flex;
+        gap: 1vw; 
+    }
+    
+
 }
