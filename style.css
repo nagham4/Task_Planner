@@ -264,6 +264,13 @@ body
         display: flex;
         gap: 1vw; 
     }
+
+    div button
+    {  
+        padding: 0.5vw 2vw;
+        border: none;
+        color: var(--main-white);
+    }
     
 
 }
