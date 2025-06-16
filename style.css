@@ -211,12 +211,12 @@ body
         font-size: 1.25vw;
         text-align: center;
     }
-        div
+    div
     {
         display: flex;
         gap: 2vw;
     }
-        div button
+    div button
     {   
         padding: 0.5vw 2vw;
         border: none;
@@ -224,5 +224,14 @@ body
         color: var(--main-white);
     }
 
+    #confirmOpreationButton
+    {
+        background-color: var(--main-Blue);
+    }
+    
+     #cancelOpreationButton
+    {
+        background-color: var(--main-red);
+    }*
 
 }
