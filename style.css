@@ -216,6 +216,13 @@ body
         display: flex;
         gap: 2vw;
     }
+        div button
+    {   
+        padding: 0.5vw 2vw;
+        border: none;
+        border-radius: 0.5vw;
+        color: var(--main-white);
+    }
 
 
 }
