@@ -18,6 +18,9 @@
 :root {
     --main-white:white;
 }
+:root {
+    --main-red:#890101;
+}
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 *
 {
@@ -110,7 +113,7 @@ body
     p
     {
         display: none;
-        color: red;
+        color: var(--main-red);
     }
 
     button
@@ -167,5 +170,26 @@ body
         display: none;
     }
 
+    .deleteContainer
+    {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 1vw;
+    }
+    .deleteButton
+    {
+        width: 100%;
+        padding: 0.8vw 0 0.8vw 0;
+        background-color: var(--main-red);
+        color: var(--main-white);
+        border: none;
+        border-radius: 0.5vw;
+    }
 
 }
+.hoverEffect
+{
+    background-color: rgb(8, 8, 118);
+}
+
