@@ -277,4 +277,9 @@ body
         color: var(--main-white);
     }
 
+    #cancelOpreationButtonEdit
+    {
+        background-color: var(--main-red);
+    }
+
 }
