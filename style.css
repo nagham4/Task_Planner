@@ -211,6 +211,11 @@ body
         font-size: 1.25vw;
         text-align: center;
     }
-    
+        div
+    {
+        display: flex;
+        gap: 2vw;
+    }
+
 
 }
