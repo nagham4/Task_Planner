@@ -211,6 +211,27 @@ body
         font-size: 1.25vw;
         text-align: center;
     }
+    div
+    {
+        display: flex;
+        gap: 2vw;
+    }
+    div button
+    {   
+        padding: 0.5vw 2vw;
+        border: none;
+        border-radius: 0.5vw;
+        color: var(--main-white);
+    }
+
+    #confirmOpreationButton
+    {
+        background-color: var(--main-Blue);
+    }
     
+     #cancelOpreationButton
+    {
+        background-color: var(--main-red);
+    }*
 
 }
