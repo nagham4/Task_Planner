@@ -271,6 +271,10 @@ body
         border: none;
         color: var(--main-white);
     }
-    
+    .alertEditConfirmButton
+    {
+        background-color:var(--main-Blue);
+        color: var(--main-white);
+    }
 
 }
