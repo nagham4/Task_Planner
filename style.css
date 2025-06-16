@@ -205,6 +205,12 @@ body
     gap: 2vw;
     border-radius: 1vw;
     background-color: var(--main-white);
+
+    h1
+    {
+        font-size: 1.25vw;
+        text-align: center;
+    }
     
 
 }
