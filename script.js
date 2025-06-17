@@ -360,4 +360,6 @@ deleteDoneButton.onclick = async () => {
 /*aya*/
 deleteAllButton.onclick = async ()=>
   {
+    const unloadedTasks = unloadTask();
+    
   }
