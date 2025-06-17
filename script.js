@@ -362,6 +362,6 @@ deleteAllButton.onclick = async ()=>
   {
     const unloadedTasks = unloadTask();
     if(unloadedTasks.length >= 1){
-      
+      let flag =await confirmOpreation();
     }
   };
