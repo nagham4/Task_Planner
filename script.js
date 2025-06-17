@@ -359,9 +359,15 @@ deleteDoneButton.onclick = async () => {
 };
 /*aya*/
 deleteAllButton.onclick = async ()=>
-  {
+{
     const unloadedTasks = unloadTask();
-    if(unloadedTasks.length >= 1){
+    if(unloadedTasks.length >= 1)
+    {
       let flag =await confirmOpreation();
+      if(flag){
+        
+      }
+
+      
     }
-  };
+};
