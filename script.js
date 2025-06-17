@@ -367,6 +367,7 @@ deleteAllButton.onclick = async ()=>
       if(flag){
         localStorage.removeItem("tasks");
         displayTasks();
+        removeTasksHTML();
       }
 
       
