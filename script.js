@@ -368,8 +368,7 @@ deleteAllButton.onclick = async ()=>
         localStorage.removeItem("tasks");
         displayTasks();
         removeTasksHTML();
-      }
-
-      
+        noTasksChecker();
+      } 
     }
 };
