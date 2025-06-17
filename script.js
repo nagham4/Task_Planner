@@ -361,5 +361,7 @@ deleteDoneButton.onclick = async () => {
 deleteAllButton.onclick = async ()=>
   {
     const unloadedTasks = unloadTask();
-    
-  }
+    if(unloadedTasks.length >= 1){
+      
+    }
+  };
