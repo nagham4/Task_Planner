@@ -365,7 +365,7 @@ deleteAllButton.onclick = async ()=>
     {
       let flag =await confirmOpreation();
       if(flag){
-        
+        localStorage.removeItem("tasks");
       }
 
       
