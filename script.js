@@ -380,6 +380,8 @@ scrollContainerDiv.addEventListener("click", async (event)=>{
       if(taskToDelete){
         unloadedTasks = unloadTask();
         if(unloadedTasks.length > 0){
+          let foundTask = unloadedTasks.find(task => taskToDelete.id === task.taskId);
+          
         }
       }
    }
