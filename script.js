@@ -379,6 +379,8 @@ scrollContainerDiv.addEventListener("click", async (event)=>{
       const taskToDelete = event.target.closest(".task");
       if(taskToDelete){
         unloadedTasks = unloadTask();
+        if(unloadedTasks.length > 0){
+        }
       }
    }
 });
