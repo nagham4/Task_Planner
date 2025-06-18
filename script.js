@@ -373,3 +373,6 @@ deleteAllButton.onclick = async ()=>
     }
 };
 ///////                Tasks functions 
+scrollContainerDiv.addEventListener("click", async (event)=>{
+
+});
