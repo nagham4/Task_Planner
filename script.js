@@ -378,6 +378,7 @@ scrollContainerDiv.addEventListener("click", async (event)=>{
    if(event.target.alt === "deleteIcon"){
       const taskToDelete = event.target.closest(".task");
       if(taskToDelete){
+        unloadedTasks = unloadTask();
       }
    }
 });
