@@ -372,3 +372,4 @@ deleteAllButton.onclick = async ()=>
       } 
     }
 };
+///////                Tasks functions 
