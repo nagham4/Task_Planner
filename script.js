@@ -390,4 +390,6 @@ scrollContainerDiv.addEventListener("click", async (event)=>{
         }
       }
    }
+
+  // Event for editing task
 });
