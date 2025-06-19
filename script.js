@@ -394,6 +394,8 @@ scrollContainerDiv.addEventListener("click", async (event)=>{
   // Event for editing task
   if(event.target.alt === "pencilIcon" ){
     let flag = await confirmOpreationEdit();
-
+    if(flag[0] === "1"){
+      
+    }
   }
 });
