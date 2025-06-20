@@ -434,9 +434,15 @@ scrollContainerDiv.addEventListener("click", async (event)=>{
           }
           let foundTaskIndex = unloadedTasks.indexOf(foundTask);
           unloadedTasks[foundTaskIndex].taskId = taskToDone.id;
-          
+          storeTaskChange(unloadedTasks[foundTaskIndex], foundTaskIndex, 0);
+          paragraphToEdit.classList.toggle ("taskParagraphCrossed");
         }
       }
     }
   }
 });
+window.onload = ()=>{
+  allButton.classList.add("hoverEffect");
+  displayTasks();
+  noTasksChecker();
+}
