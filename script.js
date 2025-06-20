@@ -418,7 +418,9 @@ scrollContainerDiv.addEventListener("click", async (event)=>{
     const paragraphToEdit  = taskToDone.querySelector("p");
      if(taskToDone){
       unloadedTasks = unloadTask();
-      
+       if(unloadedTasks.length > 0){
+        
+       }
      }
   }
 });
