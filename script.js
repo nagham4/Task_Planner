@@ -404,7 +404,7 @@ scrollContainerDiv.addEventListener("click", async (event)=>{
           let foundTask = unloadedTasks.find(task => taskToEdit.id === task.taskId);
           if(foundTask){
             let foundTaskIndex = unloadedTasks.indexOf(foundTask);
-            
+             unloadedTasks[foundTaskIndex].paragraphContent = flag[1];
            }
         }
 
