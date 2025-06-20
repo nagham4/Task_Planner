@@ -402,6 +402,9 @@ scrollContainerDiv.addEventListener("click", async (event)=>{
         unloadedTasks = unloadTask();
         if(unloadedTasks.length > 0){
           let foundTask = unloadedTasks.find(task => taskToEdit.id === task.taskId);
+          if(foundTask){
+            
+           }
         }
 
         }
