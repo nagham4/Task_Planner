@@ -398,6 +398,9 @@ scrollContainerDiv.addEventListener("click", async (event)=>{
       const taskToEdit = event.target.closest(".task");
       const paragraphToEdit  = taskToEdit.querySelector("p");
       paragraphToEdit.textContent = flag[1];
+      if(taskToEdit){
+        
+        }
     }
   }
 });
