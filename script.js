@@ -1,4 +1,9 @@
 // Edit content Alert buttons and div
+
+//./icons/pencil-svgrepo-com (1).svg
+//./icons/trash-bin-2-svgrepo-com.svg
+
+
 let alertEdit = document.getElementById("confirmEdit");
 let confirmOpreationButtonEdit = document.getElementById(
   "confirmOpreationButtonEdit"
@@ -209,11 +214,11 @@ const displayTaskOnAddNew = (task) => {
   tempCheckbox.type = "checkbox";
 
   let tempImg1 = document.createElement("img");
-  tempImg1.src = "./sourceImages/icons/pencil-solid.svg";
+  tempImg1.src = "./icons/pencil-svgrepo-com.svg";
   tempImg1.alt = "pencilIcon";
 
   let tempImg2 = document.createElement("img");
-  tempImg2.src = "./sourceImages/icons/trash-solid.svg";
+  tempImg2.src = "./icons/trash-bin-2-svgrepo-com.svg";
   tempImg2.alt = "deleteIcon";
 
   //Appending content to the icondiv
@@ -255,11 +260,11 @@ const displayTasks = () => {
       if (task.taskId[1] === "t") tempCheckbox.checked = true;
 
       let tempImg1 = document.createElement("img");
-      tempImg1.src = "pencil-svgrepo-com.svg";
+      tempImg1.src = "./icons/pencil-svgrepo-com.svg";
       tempImg1.alt = "pencilIcon";
 
       let tempImg2 = document.createElement("img");
-      tempImg2.src = "trash-solid-svgrepo-com.svg";
+      tempImg2.src = "./icons/trash-bin-2-svgrepo-com.svg";
       tempImg2.alt = "deleteIcon";
 
       //Appending content to the icondiv
