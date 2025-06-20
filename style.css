@@ -6,6 +6,11 @@
 <i class="fa-solid fa-exclamation" style="color: #890101;></i>
 */
 
+/*
+//./icons/pencil-svgrepo-com.svg
+//./icons/trash-bin-2-svgrepo-com.svg
+*/
+
 :root {
     --main-Blue:#0a96ba;
 }
@@ -113,7 +118,7 @@ body
         background-color: var(--main-white);
     }
 
-    p
+    #inputNote
     {
         display: none;
         color: var(--main-red);
@@ -204,6 +209,41 @@ body
     }
 
 }
+
+
+/**/
+.task
+{
+
+   
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5vw;
+    border: 2px solid var(--main-lightgray);
+    border-radius: 0.5vw;
+}
+
+.taskParagraphCrossed
+{
+    color: var(--main-red);
+    text-decoration: line-through  black;
+}
+
+.icons
+{
+    display: flex;
+    gap: 0.5vw;
+
+    img
+    {
+        width: 1vw;
+        gap: 0.5vw;
+        cursor: pointer;
+    }
+   
+}
+
+/**/
 .hoverEffect
 {
     background-color: rgb(8, 8, 118);
