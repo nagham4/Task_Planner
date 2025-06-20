@@ -427,6 +427,8 @@ scrollContainerDiv.addEventListener("click", async (event)=>{
           else if (taskToDone.id[1] === 't') {
              taskToDone.id = taskToDone.id[0] + 'f' + taskToDone.id[1].slice(2);
           }
+          let foundTaskIndex = unloadedTasks.indexOf(foundTask);
+          
         }
       }
     }
