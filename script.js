@@ -417,6 +417,7 @@ scrollContainerDiv.addEventListener("click", async (event)=>{
     const taskToDone = event.target.closest(".task");
     const paragraphToEdit  = taskToDone.querySelector("p");
      if(taskToDone){
+      unloadedTasks = unloadTask();
       
      }
   }
