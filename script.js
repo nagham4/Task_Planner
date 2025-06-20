@@ -405,10 +405,11 @@ scrollContainerDiv.addEventListener("click", async (event)=>{
           if(foundTask){
             let foundTaskIndex = unloadedTasks.indexOf(foundTask);
              unloadedTasks[foundTaskIndex].paragraphContent = flag[1];
-           }
+             storeTaskChange(unloadedTasks[foundTaskIndex], foundTaskIndex, 0);
+            }
         }
 
-        }
+      }
     }
   }
 });
