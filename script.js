@@ -414,5 +414,7 @@ scrollContainerDiv.addEventListener("click", async (event)=>{
   }
   // Event for marking task done
   if(event.target.type ==="checkbox" && (event.target.checked || !event.target.checked) ){
+    const taskToDone = event.target.closest(".task");
+    
   }
 });
