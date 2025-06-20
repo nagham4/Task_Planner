@@ -436,3 +436,6 @@ scrollContainerDiv.addEventListener("click", async (event)=>{
     }
   }
 });
+window.onload = ()=>{
+  
+}
