@@ -412,4 +412,5 @@ scrollContainerDiv.addEventListener("click", async (event)=>{
       }
     }
   }
+  // Event for marking task done
 });
