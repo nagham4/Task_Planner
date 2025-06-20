@@ -437,5 +437,6 @@ scrollContainerDiv.addEventListener("click", async (event)=>{
   }
 });
 window.onload = ()=>{
-  
+  allButton.classList.add("hoverEffect");
+  displayTasks();
 }
