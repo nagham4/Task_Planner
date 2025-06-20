@@ -243,7 +243,7 @@ body
    
 }
 
-/**/
+
 .hoverEffect
 {
     background-color: rgb(8, 8, 118);
@@ -269,6 +269,7 @@ body
     width: 26vw;
     height: 15vw;
     display: flex;
+    padding: 2vw;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -323,10 +324,21 @@ body
 
 .alertEditContent
 {
+    width: 26vw;
+    height: 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2vw;
+    border-radius: 1vw;
+    background-color:var(--main-white);
+
     input
     {
         padding: 0.8vw 6vw 0.8vw 1vw; 
         border: 1px solid black;
+        border-radius: 0.5vw;
         outline: none; 
     }
 
