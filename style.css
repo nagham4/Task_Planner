@@ -21,6 +21,9 @@
 :root {
     --main-red:#890101;
 }
+:root{
+    --main-yellow:rgb(255, 255, 8);
+}
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 *
 {
@@ -88,7 +91,7 @@ body
         display: flex;
     }
 
-    i
+    img
     {
         color: var(--main-white);
         display: inline;
@@ -153,6 +156,19 @@ body
         background-color: var(--main-Blue);
         border: none;
         border-radius: 0.5vw;
+    }
+
+    .icons
+    {
+        display:flex;
+        gap:0.5vw;
+
+        img
+        {
+            width:1vw;
+            gap:0.5vw;
+            cursor:pointer;
+        }
     }
 
     .scrollContainer
