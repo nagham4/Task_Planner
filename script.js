@@ -366,9 +366,8 @@ deleteAllButton.onclick = async ()=>
       } 
     }
 };
-///////                Tasks functions 
+ 
 scrollContainerDiv.addEventListener("click", async (event)=>{
-   // Event for deleting task
    if(event.target.alt === "deleteIcon"){
       const taskToDelete = event.target.closest(".task");
       if(taskToDelete){
