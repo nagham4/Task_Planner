@@ -139,9 +139,9 @@ const confirmOpreationEdit = () => {
 
   return new Promise((resolve, reject) => {
     confirmOpreationButtonEdit.addEventListener("click", () => {
-      if (checkInpt(inputEdit.value)) {
+      if (checkInpt(inputEdit.value.trim())) {
         flag[0] = "1";
-        flag[1] = inputEdit.value;
+        flag[1] = inputEdit.value.trim();
         alertEdit.style.display = "none";
         resolve(flag);
       } else {
@@ -181,13 +181,6 @@ const confirmOpreation = () => {
         resolve((flag = false));
       });
 
-    /* 
-        setTimeout(()=>{
-            alert.style.display = "none";
-            reject(flag);
-    
-        }, 5000)
-        */
   });
 };
 
@@ -285,8 +278,7 @@ const displayTasks = () => {
   //To make sure the no task note isnt shown
 };
 addNewTaskButton.onclick = () => {
-  let text = mainInput.value;
-
+  let text = mainInput.value.trim();
   if (checkInpt(text)) {
     addNewTask(text);
     inputNote.style.display = "";
@@ -351,17 +343,14 @@ deleteDoneButton.onclick = async () => {
     let flag = await confirmOpreation();
 
     if (flag) {
-      unloadedTasks.forEach((task, index) => {
-        if (task.taskId[1] === "t") {
-          storeTaskChange(task, index, 1);
-        }
-
-        removeTasksDoneHTML();
-        noTasksChecker();
-      });
+      let remainingTasks = unloadedTasks.filter(task => task.taskId[1] !== "t");
+      localStorage.setItem("tasks", JSON.stringify(remainingTasks));
+      removeTasksDoneHTML();
+      noTasksChecker();
     }
   }
 };
+
 /*aya*/
 deleteAllButton.onclick = async ()=>
 {
