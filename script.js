@@ -1,5 +1,7 @@
 //task planner
 
+//task planner
+
 const alertEdit = document.getElementById("confirmEdit");
 const confirmOpreationButtonEdit = document.getElementById("confirmOpreationButtonEdit");
 const cancelOpreationButtonEdit = document.getElementById("cancelOpreationButtonEdit");
@@ -20,13 +22,12 @@ const todoButton = document.querySelector("#todo");
 
 const scrollContainerDiv = document.querySelector("#scrollContainer");
 const noTasksHeader = document.querySelector("#noTasksHeader");
-const taskArr = document.getElementsByClassName("task");
-
 const deleteDoneButton = document.querySelector("#deleteDone");
 const deleteAllButton = document.querySelector("#deleteAll");
 
 const noTasksChecker = () => {
-  noTasksHeader.style.display = document.querySelectorAll(".task").length ? "none" : "block";
+  const hasTasks = document.querySelectorAll(".task").length > 0;
+  noTasksHeader.style.display = hasTasks ? "none" : "block";
 };
 
 const removeTasksHTML = () => {
@@ -40,16 +41,10 @@ const removeTasksDoneHTML = () => {
 };
 
 const storeTaskChange = (task, index, flag) => {
-  let temp = unloadTask();
+  const temp = unloadTask();
   if (temp.length > 0 && task) {
-    switch (flag) {
-      case 0:
-        Object.assign(temp[index], task);
-        break;
-      case 1:
-        temp.splice(index, 1);
-        break;
-    }
+    if (flag === 0) Object.assign(temp[index], task);
+    else if (flag === 1) temp.splice(index, 1);
     localStorage.setItem("tasks", JSON.stringify(temp));
   }
 };
@@ -62,12 +57,8 @@ const storeLocal = task => {
 
 const saveTask = text => {
   mainInput.value = "";
-
   const task = {
-    taskId: `${Math.floor(Math.random() * 5)}f`,
-
-  let task = {
-    taskId: Math.floor(Math.random() * 10) + "f",
+    taskId: ${Math.floor(Math.random() * 10)}f,
     paragraphStatus: "",
     paragraphContent: text,
   };
@@ -78,7 +69,7 @@ const saveTask = text => {
 
 const unloadTask = () => JSON.parse(localStorage.getItem("tasks")) || [];
 
-const checkInpt = textTT => textTT.length > 5 && /^(?!\d)/.test(textTT);
+const checkInpt = textTT => textTT.length > 5 && isNaN(Number(textTT[0]));
 
 const confirmOpreationEdit = () => {
   let flag = ["0"];
@@ -92,7 +83,7 @@ const confirmOpreationEdit = () => {
         resolve(flag);
       } else {
         inputEditNote.style.display = "block";
-        setTimeout(() => inputEditNote.style.display = "none", 3000);
+        setTimeout(() => (inputEditNote.style.display = "none"), 3000);
       }
     };
     confirmOpreationButtonEdit.onclick = handleConfirm;
@@ -149,9 +140,7 @@ const displayTaskOnAddNew = task => {
   scrollContainerDiv.append(newTask);
 };
 
-const displayTasks = () => {
-  unloadTask().forEach(task => displayTaskOnAddNew(task));
-};
+const displayTasks = () => unloadTask().forEach(displayTaskOnAddNew);
 
 addNewTaskButton.onclick = () => {
   const text = mainInput.value.trim();
@@ -160,25 +149,25 @@ addNewTaskButton.onclick = () => {
     inputNote.style.display = "none";
   } else {
     inputNote.style.display = "block";
-    setTimeout(() => inputNote.style.display = "none", 3000);
+    setTimeout(() => (inputNote.style.display = "none"), 3000);
   }
 };
 
-const setFilter = (filterType) => {
+const setFilter = filterType => {
   [allButton, doneButton, todoButton].forEach(btn => btn.classList.remove("hoverEffect"));
-  const taskList = Array.from(taskArr);
+  const taskList = Array.from(document.getElementsByClassName("task"));
   switch (filterType) {
     case "all":
       allButton.classList.add("hoverEffect");
-      taskList.forEach(task => task.style.display = "");
+      taskList.forEach(task => (task.style.display = ""));
       break;
     case "done":
       doneButton.classList.add("hoverEffect");
-      taskList.forEach(task => task.style.display = task.id[1] === "t" ? "" : "none");
+      taskList.forEach(task => (task.style.display = task.id[1] === "t" ? "" : "none"));
       break;
     case "todo":
       todoButton.classList.add("hoverEffect");
-      taskList.forEach(task => task.style.display = task.id[1] === "f" ? "" : "none");
+      taskList.forEach(task => (task.style.display = task.id[1] === "f" ? "" : "none"));
       break;
   }
 };
@@ -212,14 +201,14 @@ deleteAllButton.onclick = async () => {
   }
 };
 
-
 scrollContainerDiv.addEventListener("click", async event => {
-  const { target } = event;
+  const target = event.target;
   if (!target.closest(".task")) return;
   const taskEl = target.closest(".task");
   const taskId = taskEl.id;
   let tasks = unloadTask();
   const taskIndex = tasks.findIndex(task => task.taskId === taskId);
+
   if (target.alt === "deleteIcon") {
     storeTaskChange(tasks[taskIndex], taskIndex, 1);
     taskEl.remove();
@@ -227,69 +216,10 @@ scrollContainerDiv.addEventListener("click", async event => {
   } else if (target.alt === "pencilIcon") {
     const flag = await confirmOpreationEdit();
     if (flag[0] === "1") {
-      taskEl.querySelector("p").textContent = flag[1];
-      tasks[taskIndex].paragraphContent = flag[1];
+      const newText = flag[1];
+      taskEl.querySelector("p").textContent = newText;
+      tasks[taskIndex].paragraphContent = newText;
       storeTaskChange(tasks[taskIndex], taskIndex, 0);
- 
-scrollContainerDiv.addEventListener("click", async (event)=>{
-   if(event.target.alt === "deleteIcon"){
-      const taskToDelete = event.target.closest(".task");
-      if(taskToDelete){
-        unloadedTasks = unloadTask();
-        if(unloadedTasks.length > 0){
-          let foundTask = unloadedTasks.find(task => taskToDelete.id === task.taskId);
-          if(foundTask){
-            let foundTaskIndex = unloadedTasks.indexOf(foundTask);
-            storeTaskChange(unloadedTasks[foundTaskIndex], foundTaskIndex, 1);
-            taskToDelete.remove();
-            noTasksChecker();
-          }
-        }
-      }
-   }
-
-  
-  if(event.target.alt === "pencilIcon" ){
-    let flag = await confirmOpreationEdit();
-    if(flag[0] === "1"){
-      const taskToEdit = event.target.closest(".task");
-      const paragraphToEdit  = taskToEdit.querySelector("p");
-      paragraphToEdit.textContent = flag[1];
-      if(taskToEdit){
-        unloadedTasks = unloadTask();
-        if(unloadedTasks.length > 0){
-          let foundTask = unloadedTasks.find(task => taskToEdit.id === task.taskId);
-          if(foundTask){
-            let foundTaskIndex = unloadedTasks.indexOf(foundTask);
-             unloadedTasks[foundTaskIndex].paragraphContent = flag[1];
-             storeTaskChange(unloadedTasks[foundTaskIndex], foundTaskIndex, 0);
-            }
-        }
-
-      }
-    }
-  }
-
-  if(event.target.type ==="checkbox" && (event.target.checked || !event.target.checked) ){
-    const taskToDone = event.target.closest(".task");
-    const paragraphToEdit  = taskToDone.querySelector("p");
-    if(taskToDone){
-      unloadedTasks = unloadTask();
-      if(unloadedTasks.length > 0){
-        let foundTask = unloadedTasks.find(task => taskToDone.id === task.taskId);
-        if(foundTask){
-          if(taskToDone.id[1] === 'f'){
-             taskToDone.id = taskToDone.id[0] + 't' + taskToDone.id[1].slice(2);
-          }
-          else if (taskToDone.id[1] === 't') {
-             taskToDone.id = taskToDone.id[0] + 'f' + taskToDone.id[1].slice(2);
-          }
-          let foundTaskIndex = unloadedTasks.indexOf(foundTask);
-          unloadedTasks[foundTaskIndex].taskId = taskToDone.id;
-          storeTaskChange(unloadedTasks[foundTaskIndex], foundTaskIndex, 0);
-          paragraphToEdit.classList.toggle ("taskParagraphCrossed");
-        }
-      }
     }
   } else if (target.type === "checkbox") {
     const p = taskEl.querySelector("p");
@@ -304,6 +234,4 @@ window.onload = () => {
   allButton.classList.add("hoverEffect");
   displayTasks();
   noTasksChecker();
-
 };
-}
