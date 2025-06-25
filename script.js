@@ -1,6 +1,5 @@
-// تم التعديل لتضمين مفاهيم DOM والـ ES6 الحديثة بناءً على الروابط المرسلة
+//task planner
 
-// استخدام const و let بدلاً من var
 const alertEdit = document.getElementById("confirmEdit");
 const confirmOpreationButtonEdit = document.getElementById("confirmOpreationButtonEdit");
 const cancelOpreationButtonEdit = document.getElementById("cancelOpreationButtonEdit");
