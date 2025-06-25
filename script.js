@@ -58,7 +58,7 @@ const storeLocal = task => {
 const saveTask = text => {
   mainInput.value = "";
   const task = {
-    taskId: ${Math.floor(Math.random() * 10)}f,
+    taskId: `${Math.floor(Math.random() * 10)}f`,
     paragraphStatus: "",
     paragraphContent: text,
   };
